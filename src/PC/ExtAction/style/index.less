@@ -1,0 +1,80 @@
+@import "../../../PC/style/var";
+@import "../../../PC/style/global";
+
+
+.action-box {
+  display: inline-block;
+  height: 100%;
+
+  i {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 34px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+
+    &.ant-dropdown-open,
+    &:hover {
+      .icon-hover(@color_primary, fade(@color_black, 5%))
+    }
+
+    &.del:hover {
+      color: @color_error;
+      background-color: fade(@color_error, 15%);
+    }
+
+    &.ant-popover-open:hover,
+    &.ant-popover-open {
+      .icon-hover(@color_error,fade(@color_error,15%))
+    }
+  }
+
+  a {
+    margin-right: 8px;
+  }
+}
+
+
+.action-menu-box {
+  :global {
+    .ant-dropdown-menu-item {
+      padding: 8px 32px;
+
+      span > i {
+        margin-right: 8px;
+      }
+
+      &.delete {
+        padding: 0;
+
+        span {
+          padding: 8px 32px;
+          display: inline-block;
+        }
+
+        .ant-popover-open {
+          color: @btn-danger-color;
+        }
+      }
+
+      &.apply {
+        padding: 0;
+
+        span {
+          padding: 8px 32px;
+          display: inline-block;
+        }
+
+        .ant-popover-open {
+          color: @color_warning;
+        }
+      }
+    }
+  }
+}
+
+.pop-confirm-box {
+  z-index: 1050;
+}
