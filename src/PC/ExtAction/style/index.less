@@ -1,6 +1,10 @@
-@import "../../../PC/style/var";
-@import "../../../PC/style/global";
+@import '../../../PC/style/var';
+@import '../../../PC/style/global';
 
+.del {
+  color: @color_error;
+  background-color: fade(@color_error, 15%);
+}
 
 .action-box {
   display: inline-block;
@@ -10,24 +14,20 @@
     display: inline-block;
     width: 32px;
     height: 32px;
-    line-height: 34px;
+    line-height: 32px;
+    text-align: center;
     border-radius: 4px;
     cursor: pointer;
     transition: all ease-in 0.2s;
 
     &.ant-dropdown-open,
     &:hover {
-      .icon-hover(@color_primary, fade(@color_black, 5%))
+      .icon-hover(@color_primary, fade(@color_black, 5%));
     }
 
-    &.del:hover {
+    &.danger:hover {
       color: @color_error;
       background-color: fade(@color_error, 15%);
-    }
-
-    &.ant-popover-open:hover,
-    &.ant-popover-open {
-      .icon-hover(@color_error,fade(@color_error,15%))
     }
   }
 
@@ -35,7 +35,6 @@
     margin-right: 8px;
   }
 }
-
 
 .action-menu-box {
   :global {

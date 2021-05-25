@@ -1,6 +1,1 @@
-/**
- *@author:lzh
- *@describe:
- *@time:
- */
-import './index.less'
+import './index.less';

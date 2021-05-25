@@ -3,57 +3,63 @@
  *@describe: ExAction
  *@time:
  */
-import React, {Component, Fragment, ReactNode} from 'react';
+import React, { Component, Fragment, ReactNode } from 'react';
 // @ts-ignore
-import {Dropdown, Icon, Menu, message, Popconfirm, Spin} from 'antd';
-import {ExtIcon, utils, WorkFlow} from 'suid';
+import { Dropdown, Icon, Menu, message, Popconfirm, Spin, Tooltip } from 'antd';
+import {
+  DeleteOutlined,
+  EditOutlined,
+  EyeOutlined,
+  MoreOutlined,
+} from '@ant-design/icons';
+import { utils, WorkFlow } from 'suid';
 import cls from 'classnames';
+// @ts-ignore
 import styles from './style/index.less';
 import isEqual from 'react-fast-compare';
 
-const {Item} = Menu;
-const {getUUID} = utils;
-const {StartFlow, FlowHistoryButton} = WorkFlow;
+const { Item } = Menu;
+const { getUUID } = utils;
+const { StartFlow, FlowHistoryButton } = WorkFlow;
 
 export interface IListProps {
-  title: string
-  key: string
-  disabled?: boolean
-  className?: string
+  title: string;
+  key: string;
+  disabled?: boolean;
+  className?: string;
   /** 权限代码，权限code与disabled两者共同控制着按钮显示*/
-  authorityCode?: string
-  type?: ReactNode | string
+  authorityCode?: string;
+  icon?: ReactNode | string;
   /** 提示信息*/
-  warnTip?: string
+  warnTip?: string;
   /** 流程启动实体路径*/
-  businessModelCode?: string
+  businessModelCode?: string;
   /** 流程启动前事件*/
-  onBeforeStart?: (resolve: { success: boolean }) => void
+  onBeforeStart?: (resolve: { success: boolean }) => void;
   /** 流程启动后事件*/
-  onStartComplete?: (record: object) => void
+  onStartComplete?: (record: object) => void;
 }
 
 export declare type ILayOut = 'Inline' | 'Vertical';
 
 export interface IActionProps {
   /** 下拉列表数组*/
-  listArr: IListProps[]
+  listArr: IListProps[];
   /** 当前选中行信息*/
-  record: object
+  record: object;
   /** 布局方式*/
-  layOut?: ILayOut
+  layOut?: ILayOut;
   /** 点击事件*/
-  action?: (key: string, record: object) => void
+  action?: (key: string, record: object) => void;
 }
 
 export interface IActionState {
-  menuShow: boolean
-  menusData: any[]
-  selectedKeys: string
+  menuShow: boolean;
+  menusData: any[];
+  selectedKeys: string;
 }
 
 class ExtAction extends Component<IActionProps, IActionState> {
-
   constructor(props: IActionProps | Readonly<IActionProps>) {
     super(props);
     this.state = {
@@ -64,10 +70,21 @@ class ExtAction extends Component<IActionProps, IActionState> {
   }
 
   static defaultProps = {
-    listArr: [],
-  }
+    listArr: [
+      { title: '查看', key: 'view', icon: <EyeOutlined /> },
+      { title: '编辑', key: 'add', icon: <EditOutlined /> },
+      {
+        title: '删除',
+        key: 'del',
+        icon: <DeleteOutlined />,
+        warnTip: '确认删除？删除后不可恢复！',
+        className: 'danger',
+      },
+    ],
+    layOut: 'Inline',
+  };
 
-  componentDidUpdate(prevProps: { record: any; }, prevState: any) {
+  componentDidUpdate(prevProps: { record: any }, prevState: any) {
     if (!isEqual(prevProps.record, this.props.record)) {
       this.initActionMenus();
     }
@@ -82,19 +99,31 @@ class ExtAction extends Component<IActionProps, IActionState> {
     });
   };
 
-  action = (e: React.MouseEvent<HTMLElement> | undefined, key: string, record: object) => {
+  action = (
+    e: React.MouseEvent<HTMLElement> | undefined,
+    key: string,
+    record: object,
+  ) => {
     if (e) e.stopPropagation();
-    this.setState({
-      selectedKeys: '',
-      menuShow: false,
-    }, () => {
-      const {action} = this.props;
-      if (action) action(key, record)
-    });
+    this.setState(
+      {
+        selectedKeys: '',
+        menuShow: false,
+      },
+      () => {
+        const { action } = this.props;
+        if (action) action(key, record);
+      },
+    );
   };
 
-  onBeforeStart = (_beforeStart: (resolve: (value: { success: boolean }) => void, record: object) => void): any => {
-    const {record} = this.props;
+  onBeforeStart = (
+    _beforeStart: (
+      resolve: (value: { success: boolean }) => void,
+      record: object,
+    ) => void,
+  ): any => {
+    const { record } = this.props;
     return new Promise(resolve => {
       this.setState({
         selectedKeys: '',
@@ -104,32 +133,38 @@ class ExtAction extends Component<IActionProps, IActionState> {
     });
   };
 
-  onStartComplete = (res: { success: boolean; }, _startComplete: (arg0: any) => void) => {
-    const {record} = this.props;
+  onStartComplete = (
+    res: { success: boolean },
+    _startComplete: (arg0: any) => void,
+  ) => {
+    const { record } = this.props;
     if (res.success) {
       message.destroy();
       this.setState({
         selectedKeys: '',
         menuShow: false,
       });
-      _startComplete(record)
+      _startComplete(record);
     }
   };
 
   onActionOperation = (e: any, record: object) => {
-    const {action} = this.props;
+    const { action } = this.props;
     if (e.key.indexOf('history_de') || e.key.indexOf('startFlow_de')) {
       this.setState({
         selectedKeys: e.key,
         menuShow: true,
       });
     } else {
-      this.setState({
-        selectedKeys: '',
-        menuShow: false,
-      }, () => {
-        if (action) action(e.key, record);
-      });
+      this.setState(
+        {
+          selectedKeys: '',
+          menuShow: false,
+        },
+        () => {
+          if (action) action(e.key, record);
+        },
+      );
     }
   };
 
@@ -140,36 +175,45 @@ class ExtAction extends Component<IActionProps, IActionState> {
    * @param record
    * @param key
    */
-  onRenderFlow = (type: 'history' | 'start', item: any, record: any, key: any) => {
+  onRenderFlow = (
+    type: 'history' | 'start',
+    item: any,
+    record: any,
+    key: any,
+  ) => {
     if (type === 'history') {
-      return <FlowHistoryButton key={key} businessId={record.id}>
-        <div style={{height: '100%'}}>
-          <span className="menu-title">{item.title}</span>
-        </div>
-      </FlowHistoryButton>
+      return (
+        <FlowHistoryButton key={key} businessId={record.id}>
+          <div style={{ height: '100%' }}>
+            <span className="menu-title">{item.title}</span>
+          </div>
+        </FlowHistoryButton>
+      );
     }
 
     if (type === 'start') {
       // @ts-ignore
-      return <StartFlow
-        key={record.id}
-        businessKey={record.id}
-        businessModelCode={item.businessModelCode}
-        beforeStart={() => this.onBeforeStart(item.onBeforeStart)}
-        startComplete={(res) => this.onStartComplete(res, item.onStartComplete)}
-      >
-        {loading => {
-          return (
-            <div style={{height: '100%'}}>
-              <Spin spinning={loading}>
-                <span className="menu-title">{item.title}</span>
-              </Spin>
-            </div>
-          );
-        }}
-      </StartFlow>
+      return (
+        <StartFlow
+          key={record.id}
+          businessKey={record.id}
+          businessModelCode={item.businessModelCode}
+          beforeStart={() => this.onBeforeStart(item.onBeforeStart)}
+          startComplete={res => this.onStartComplete(res, item.onStartComplete)}
+        >
+          {loading => {
+            return (
+              <div style={{ height: '100%' }}>
+                <Spin spinning={loading}>
+                  <span className="menu-title">{item.title}</span>
+                </Spin>
+              </div>
+            );
+          }}
+        </StartFlow>
+      );
     }
-  }
+  };
 
   /**
    * 渲染流程按钮以外的普通按钮
@@ -177,36 +221,50 @@ class ExtAction extends Component<IActionProps, IActionState> {
    * @param record
    * @param isClick
    */
-  onRenderItem = (item: { warnTip: any; type: string; key: string; title: React.ReactNode | string; className: string }, record: object, isClick?: boolean) => {
+  onRenderItem = (
+    item: {
+      icon: ReactNode;
+      warnTip: any;
+      type: string;
+      key: string;
+      title: React.ReactNode | string;
+      className: string;
+    },
+    record: object,
+    isClick?: boolean,
+  ) => {
     if (item.warnTip) {
-      return <Popconfirm
-        overlayClassName={cls(styles['pop-confirm-box'])}
-        title={item.warnTip || '确定要删除吗？提示：删除后不可恢复!'}
-        placement="top"
-        icon={item.type || <Icon type="question-circle"/>}
-        onCancel={e => this.cancelAction(e)}
-        onConfirm={e => this.action(e, item.key, record)}
-      >
-        <ExtIcon type={item.type} antd/>{item.title}
-      </Popconfirm>
+      return (
+        <i className={styles[item.className]}>
+          <Popconfirm
+            overlayClassName={cls(styles['pop-confirm-box'])}
+            title={item.warnTip || '确定要删除吗？提示：删除后不可恢复!'}
+            placement="top"
+            icon={item.type || <Icon type="question-circle" />}
+            onCancel={e => this.cancelAction(e)}
+            onConfirm={e => this.action(e, item.key, record)}
+          >
+            <Tooltip title={item.title}>{item.icon}</Tooltip>
+          </Popconfirm>
+        </i>
+      );
     } else {
-      const {title, type, className} = item
-      return <>
-        <ExtIcon
+      const { title, icon, className } = item;
+      return (
+        <i
           className={className}
           onClick={e => {
-            if (isClick) this.action(e, item.key, record)
+            if (isClick) this.action(e, item.key, record);
           }}
-          type={type}
-          antd
-        />
-        {title}
-      </>
+        >
+          <Tooltip title={title}>{icon}</Tooltip>
+        </i>
+      );
     }
-  }
+  };
 
   getMenu = (menus: any, record: any) => {
-    const {selectedKeys} = this.state;
+    const { selectedKeys } = this.state;
     const menuId = getUUID();
     return (
       <Menu
@@ -215,36 +273,41 @@ class ExtAction extends Component<IActionProps, IActionState> {
         onClick={e => this.onActionOperation(e, record)}
         selectedKeys={[selectedKeys]}
       >
-        {
-          menus.forEach((item: any, index: number) => {
-            if (record?.flowStatus) {
-              if (record?.flowStatus.toLowerCase() === 'init') {
-                if (item.warnTip) {
-                  return <Item key={item.key} onClick={(e) => {
-                    e.domEvent && e.domEvent.stopPropagation()
-                  }}>
+        {menus.forEach((item: any, index: number) => {
+          if (record?.flowStatus) {
+            if (record?.flowStatus.toLowerCase() === 'init') {
+              if (item.warnTip) {
+                return (
+                  <Item
+                    key={item.key}
+                    onClick={e => {
+                      e.domEvent && e.domEvent.stopPropagation();
+                    }}
+                  >
                     {this.onRenderItem(item, record)}
                   </Item>
-                } else {
-                  return <Item key={item.key}>
-                    {this.onRenderItem(item, record)}
-                  </Item>
-                }
+                );
               } else {
-                if (item.businessModelCode) {
-                  return (<>
+                return (
+                  <Item key={item.key}>{this.onRenderItem(item, record)}</Item>
+                );
+              }
+            } else {
+              if (item.businessModelCode) {
+                return (
+                  <>
                     <Item key={item.key + 'history_de'}>
                       {this.onRenderFlow('history', item, record, index)}
                     </Item>
                     <Item key={item.key + 'startFlow_de'}>
                       {this.onRenderFlow('start', item, record, index)}
                     </Item>
-                  </>)
-                }
+                  </>
+                );
               }
             }
-          })
-        }
+          }
+        })}
       </Menu>
     );
   };
@@ -254,8 +317,9 @@ class ExtAction extends Component<IActionProps, IActionState> {
   }
 
   initActionMenus = () => {
-    const {listArr = []} = this.props;
-    const menus = listArr.filter((action) => {
+    const { listArr = [] } = this.props;
+    console.log(this.props, 'this.props');
+    const menus = listArr.filter(action => {
       return action;
     });
     const mData = menus.filter(m => !m.disabled);
@@ -281,23 +345,17 @@ class ExtAction extends Component<IActionProps, IActionState> {
    * @param menuShow
    */
   renderInline = (menus: any[], menuShow: boolean): ReactNode => {
-    const {record} = this.props;
+    const { record } = this.props;
 
     return menus.map((item, index) => {
       if (index <= 3) {
-        // @ts-ignore
-        if (!record.flowStatus || record?.flowStatus.toLowerCase() === 'init') {
-          this.onRenderItem(item, record, true)
-        } else {
-          this.onRenderFlow('history', item, record, index)
-          this.onRenderFlow('start', item, record, index)
-        }
+        return this.onRenderItem(item, record, true);
       } else {
         const verticalMenus = menus.splice(3);
-        this.renderVertical(verticalMenus, menuShow)
+        return this.renderVertical(verticalMenus, menuShow);
       }
-    })
-  }
+    });
+  };
 
   /**
    * Vertical样式
@@ -306,33 +364,34 @@ class ExtAction extends Component<IActionProps, IActionState> {
    * @param menuShow
    */
   renderVertical = (menusData: any, menuShow: boolean | undefined) => {
-    const {record} = this.props;
-    return <Dropdown
-      trigger={['click']}
-      overlay={this.getMenu(menusData, record)}
-      className="action-drop-down"
-      placement="bottomLeft"
-      visible={menuShow}
-      onVisibleChange={this.onVisibleChange}
-    >
-      <ExtIcon className={cls('action-recordItem')} type="more" antd />
-    </Dropdown>
-  }
+    const { record } = this.props;
+    return (
+      <Dropdown
+        trigger={['click']}
+        overlay={this.getMenu(menusData, record)}
+        className="action-drop-down"
+        placement="bottomLeft"
+        visible={menuShow}
+        onVisibleChange={this.onVisibleChange}
+      >
+        <MoreOutlined className={cls('action-recordItem')} />
+      </Dropdown>
+    );
+  };
 
   render() {
-    const {layOut} = this.props;
-    const {menuShow, menusData = []} = this.state;
+    const { layOut } = this.props;
+    const { menuShow, menusData = [] } = this.state;
+
     return (
       <Fragment>
-        {
-          menusData.length > 0 && layOut === 'Vertical'
-            ?
-            this.renderVertical(menusData, menuShow)
-            :
-            <span className={cls('action-box')}>
-              {this.renderInline(menusData, menuShow)}
-            </span>
-        }
+        {menusData.length > 0 && layOut === 'Vertical' ? (
+          this.renderVertical(menusData, menuShow)
+        ) : (
+          <span className={cls(styles['action-box'])}>
+            {this.renderInline(menusData, menuShow)}
+          </span>
+        )}
       </Fragment>
     );
   }

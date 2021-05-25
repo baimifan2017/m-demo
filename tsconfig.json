@@ -1,19 +1,53 @@
 {
+  // 编译器选项
   "compilerOptions": {
+    // 指定ts被编译成es的版本，eg：ES5
     "target": "esnext",
+    // 模块化标准：ES5 、 ES6 、 commonjs
     "module": "esnext",
+    // "lib": [], 用了指定项目中使用到到库，"dom"， 一般情况下不需要修改
+    // 编译后文件地址
+    "outDir": "./compile",
+    //"outFile": "./compile/app.js", 将编译后代码合并成一个文件，注意只能合并全局代码文件。
+    // 允许tsc编辑js文件到outDir中
+    "allowJs": true,
+    // 检查js语法是否符合语法规范
+    "checkJs": true,
+    // 编译时是否移除注释
+    "removeComments": false,
+    // 不生成编译文件，只是检查ts代码
+    "noEmit": false,
+    // 所有严格检查全部打开/关， 配置后不用在配置具体到检查。
+    "strict": true,
+    // 语法上有错误时不编译文件
+    "noEmitOnError": true,
+    // 编译后使用严格模式 use strict
+    "alwaysStrict": true,
+    // 不允许使用隐式any
+    "noImplicitAny": true,
+    // 不允许不明确到this
+    "noImplicitThis": true,
+    // 严格检查可能为空值到情况
+    "strictNullChecks": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "jsx": "react",
     "esModuleInterop": true,
     "sourceMap": true,
     "baseUrl": "./",
-    "strict": true,
     "paths": {
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"]
     },
     "allowSyntheticDefaultImports": true
   },
+  // 编译指定目录下文件， 其中/** 表示任务模板， /*表示任意文件。
+  "include": ["./src/**/*"],
+  // 不包含的内容
   "exclude": ["node_modules", "dist", "typings"]
 }
+
+/*
+开启编译
+ts ——》js， 名称tsc  、 tsc -W
+*/

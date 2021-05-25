@@ -3,16 +3,15 @@
  *@describe:
  *@time:
  */
-import React, {Component, CSSProperties, ReactNode} from 'react';
-import {ColumnProps, TableProps} from 'antd/es/table';
-import {RuleObject} from 'antd/es/form';
+import React, { Component, CSSProperties, ReactNode } from 'react';
+import { ColumnProps, TableProps } from 'antd/es/table';
+import { RuleObject } from 'antd/es/form';
 
-import {PaginationProps} from 'antd/es/pagination';
-import PerfectScrollbar from "perfect-scrollbar";
-import {LocaleItem} from "suid/lib/locale";
-import {Size} from "suid/lib/panel";
-import {IExtTableProps, Sort} from "suid/lib/ext-table";
-
+import { PaginationProps } from 'antd/es/pagination';
+import PerfectScrollbar from 'perfect-scrollbar';
+import { LocaleItem } from 'suid/lib/locale';
+import { Size } from 'suid/lib/panel';
+import { Sort } from 'suid/lib/ext-table';
 
 declare interface StoreProps {
   /**
@@ -134,7 +133,12 @@ export declare type SortOrder = 'descend' | 'ascend';
 
 export declare type RowSelectionType = 'checkbox' | 'radio';
 
-export declare type SelectionSelectFn<T> = (record: T, selected: boolean, selectedRows: Object[], nativeEvent: Event) => void;
+export declare type SelectionSelectFn<T> = (
+  record: T,
+  selected: boolean,
+  selectedRows: Object[],
+  nativeEvent: Event,
+) => void;
 
 export declare type SelectionItemSelectFn = (key: string[]) => void;
 
@@ -144,7 +148,11 @@ export interface SelectionItem {
   onSelect?: SelectionItemSelectFn;
 }
 
-export declare type TableSelectWay = 'onSelect' | 'onSelectMultiple' | 'onSelectAll' | 'onSelectInvert';
+export declare type TableSelectWay =
+  | 'onSelect'
+  | 'onSelectMultiple'
+  | 'onSelectAll'
+  | 'onSelectInvert';
 
 export interface TableRowSelection<T> {
   type?: RowSelectionType;
@@ -152,7 +160,11 @@ export interface TableRowSelection<T> {
   onChange?: (selectedRowKeys: string[] | number[], selectedRows: T[]) => void;
   getCheckboxProps?: (record: T) => Object;
   onSelect?: SelectionSelectFn<T>;
-  onSelectMultiple?: (selected: boolean, selectedRows: T[], changeRows: T[]) => void;
+  onSelectMultiple?: (
+    selected: boolean,
+    selectedRows: T[],
+    changeRows: T[],
+  ) => void;
   onSelectAll?: (selected: boolean, selectedRows: T[], changeRows: T[]) => void;
   onSelectInvert?: (selectedRowKeys: string[] | number[]) => void;
   selections?: SelectionItem[] | boolean;
@@ -176,7 +188,10 @@ declare interface IExtTableState<T> {
   columnResizing: boolean;
   sort?: Sort;
 }
-declare class IExtTableProps<T> extends Component<IExtTableProps<T>, IExtTableState<T>> {
+declare class IExtTableProps<T> extends Component<
+  IExtTableProps<T>,
+  IExtTableState<T>
+> {
   protected queryParams: any;
   protected panel: any;
   protected dataTable: any;
@@ -226,11 +241,20 @@ declare class IExtTableProps<T> extends Component<IExtTableProps<T>, IExtTableSt
   manualSelectedRows: (selectedRowKeys?: any) => void;
   getStorageColumns: () => IColumnProps<T>[] | undefined;
   getStorage: () => IColumnProps<T>[] | undefined;
-  saveToggleToStorage: (targetColumns: IColumnProps<T>[], needSave: boolean | undefined) => void;
+  saveToggleToStorage: (
+    targetColumns: IColumnProps<T>[],
+    needSave: boolean | undefined,
+  ) => void;
   getCheckboxConfig: () => ICheckboxProps;
   onColumnCheckedChange: (targetColumns: IColumnProps<T>[]) => void;
-  generateTitle: (title: any, name: string, sort?: Sort | undefined) => JSX.Element;
-  handerHeaderCell: (column: IColumnProps<T>) => {
+  generateTitle: (
+    title: any,
+    name: string,
+    sort?: Sort | undefined,
+  ) => JSX.Element;
+  handerHeaderCell: (
+    column: IColumnProps<T>,
+  ) => {
     onClick: () => void;
   };
   getRenderColumns: (columns?: IColumnProps<T>[]) => IColumnProps<T>[];
@@ -240,33 +264,63 @@ declare class IExtTableProps<T> extends Component<IExtTableProps<T>, IExtTableSt
   loadData: (params: any) => void;
   failCallback: () => void;
   handlerPageChange: (current: number, pageSize: number) => void;
-  handlerTableChange: (pagination: PaginationProps, filters: any, sorter: any, extra: any) => void;
+  handlerTableChange: (
+    pagination: PaginationProps,
+    filters: any,
+    sorter: any,
+    extra: any,
+  ) => void;
   onShowSizeChange: (current: number, pageSize: number) => void;
   getLocalFilterData: () => any[];
   handlerSearchChange: (v: any) => void;
   handlerPressEnter: () => void;
   handlerSearch: (v: any) => void;
-  getToolBarRight: (toolBar: IToolBarProps | undefined, showSearch: boolean | undefined) => JSX.Element;
+  getToolBarRight: (
+    toolBar: IToolBarProps | undefined,
+    showSearch: boolean | undefined,
+  ) => JSX.Element;
   renderToolBar: () => JSX.Element | null;
   getRowKey: (item: any) => any;
   handleCellResize: (index: number) => (e: MouseEvent, { size }: any) => void;
   handleResizeStop: (e: any) => void;
-  getInitSelectedRows: (selectedKeys?: string[] | undefined, data?: T[] | undefined) => T[];
-  handlerRowSelectChange: (selectedRowKeys: string[], selectedRows: T[]) => void;
-  checkboxProps: (row: any) => {
+  getInitSelectedRows: (
+    selectedKeys?: string[] | undefined,
+    data?: T[] | undefined,
+  ) => T[];
+  handlerRowSelectChange: (
+    selectedRowKeys: string[],
+    selectedRows: T[],
+  ) => void;
+  checkboxProps: (
+    row: any,
+  ) => {
     disabled: any;
     onChange: () => void;
   };
   rowClick: (row: any) => void;
-  handlerRowClassName: (row: any) => "tr-selected tr-size" | "tr-size";
-  hanlderRow: (row: T, index: number) => {
+  handlerRowClassName: (row: any) => 'tr-selected tr-size' | 'tr-size';
+  hanlderRow: (
+    row: T,
+    index: number,
+  ) => {
     onClick: (args: React.MouseEvent<Element, MouseEvent>) => void;
-    onDoubleClick?: ((arg: React.MouseEvent<Element, MouseEvent>) => void) | undefined;
-    onContextMenu?: ((arg: React.MouseEvent<Element, MouseEvent>) => void) | undefined;
-    onMouseEnter?: ((arg: React.MouseEvent<Element, MouseEvent>) => void) | undefined;
-    onMouseLeave?: ((arg: React.MouseEvent<Element, MouseEvent>) => void) | undefined;
+    onDoubleClick?:
+      | ((arg: React.MouseEvent<Element, MouseEvent>) => void)
+      | undefined;
+    onContextMenu?:
+      | ((arg: React.MouseEvent<Element, MouseEvent>) => void)
+      | undefined;
+    onMouseEnter?:
+      | ((arg: React.MouseEvent<Element, MouseEvent>) => void)
+      | undefined;
+    onMouseLeave?:
+      | ((arg: React.MouseEvent<Element, MouseEvent>) => void)
+      | undefined;
   };
-  showPaginationSummary: (total: number, range: [number, number]) => JSX.Element;
+  showPaginationSummary: (
+    total: number,
+    range: [number, number],
+  ) => JSX.Element;
   initExpandedRowKeys: () => void;
   renderTable: (locale: LocaleItem) => JSX.Element;
   render(): ReactNode;
@@ -328,13 +382,13 @@ export namespace IMyProps {
   export interface IFormItemProps {
     label: string;
     name: string;
-    type: string, // 组件类型
+    type: string; // 组件类型
     rules: RuleObject[]; // 验证规则
     extra?: string | number;
     tooltip?: string;
     render?: (value: any) => any;
-    initialValue?: any
-    comboProps?: any
+    initialValue?: any;
+    comboProps?: any;
   }
 
   export declare type IStyleType = 'Antd' | 'Material';
@@ -342,8 +396,7 @@ export namespace IMyProps {
   export declare type IFormLayOut = 'horizontal' | 'vertical' | 'inline';
 
   export interface IResult {
-    success: boolean,
-    msg: string,
+    success: boolean;
+    msg: string;
   }
-
 }
