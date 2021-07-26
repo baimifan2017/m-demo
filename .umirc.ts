@@ -12,12 +12,12 @@ export default defineConfig({
       path: 'https://github.com/umijs/dumi',
     },
     {
-      title: '我有二级导航',
+      title: '参考技术',
       path: '链接是可选的',
       // 可通过如下形式嵌套二级导航菜单，目前暂不支持更多层级嵌套：
       children: [
-        { title: '第一项', path: 'https://d.umijs.org' },
-        { title: '第二项', path: '/guide' },
+        { title: 'x-render', path: 'https://x-render.gitee.io/form-render/config/props' },
+        { title: 'pro-component', path: 'https://procomponents.ant.design/components/table/?current=1&pageSize=5' },
       ],
     },
   ],
@@ -29,19 +29,13 @@ export default defineConfig({
         libraryDirectory: 'es',
         style: true,
       },
-    ],
-    [
-      'import',
-      {
-        libraryName: 'suid',
-        libraryDirectory: 'es',
-        style: true,
-      },
-      'suid',
-    ],
+    ]
   ],
+  base: '/m-demo',
+  publicPath: '/m-demo/',
   alias: {
     '@': resolve(__dirname, './src'),
+    // 'm-demo': resolve(__dirname, './src'),
     pcComponents: resolve(__dirname, './src/Pc/src/components'),
   },
   dynamicImport: {
