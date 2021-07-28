@@ -5,7 +5,6 @@
  */
 import React, {ReactNode, useState} from 'react';
 import {Form, Input} from 'antd';
-import {ComboGrid, ComboList} from 'suid';
 import {IMyProps} from './IExtTableProps';
 
 
@@ -45,13 +44,13 @@ const RenderAntdForm = (props: IRenderForm) => {
       formItems.forEach((item, key) => {
         switch (item.type) {
           case 'ComboList':
-            element = <ComboList {...item.comboProps}/>;
+            element = null
             break;
           case 'ComboTree':
 
             break;
           case 'ComboGrid':
-            element = <ComboGrid {...item.comboProps}/>
+            element = null
             break;
           default:
             element = <Input/>
