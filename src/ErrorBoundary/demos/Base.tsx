@@ -6,6 +6,7 @@ import { Table } from 'antd';
 class Base extends Component {
   render() {
     // @ts-ignore
+    // @ts-ignore
     return (
       <div>
         下面的Error会发生错误，但这并不会影响我的显示。
