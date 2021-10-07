@@ -37,6 +37,7 @@ export default class ErrorBoundary extends Component<
   static getDerivedStateFromError(error: any) {
     // 更新 state 使下一次渲染能够显示降级后的 UI
     if (error) {
+      console.error('错误信息', error);
       return { hasError: true };
     }
   }
