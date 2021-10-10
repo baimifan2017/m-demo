@@ -1,6 +1,6 @@
 ---
 hero:
-  title: Site Name
+  title: m-demo
   desc: dumi site app example
   actions:
     - text: Getting Started
@@ -18,4 +18,8 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
 
-## Hello dumi!
+## 
+> 1. 安装方式： npm install m-demo
+> 2. 维护人：xxx
+> 3. 维护人联系方式：xxx
+
