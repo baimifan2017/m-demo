@@ -1,10 +1,10 @@
 import { defineConfig } from 'dumi';
-import {resolve} from "path";
+import { resolve } from 'path';
 
 export default defineConfig({
   title: 'm-demo',
   mode: 'site',
-  locales:[['zh-CN', '中文']],
+  locales: [['zh-CN', '中文']],
   navs: [
     null, // null 值代表保留约定式生成的导航，只做增量配置
     {
@@ -16,9 +16,20 @@ export default defineConfig({
       path: '链接是可选的',
       // 可通过如下形式嵌套二级导航菜单，目前暂不支持更多层级嵌套：
       children: [
-        { title: 'x-render', path: 'https://x-render.gitee.io/form-render/config/props' },
-        { title: 'pro-component', path: 'https://procomponents.ant.design/components/table/?current=1&pageSize=5' },
+        {
+          title: 'x-render',
+          path: 'https://x-render.gitee.io/form-render/config/props',
+        },
+        {
+          title: 'pro-component',
+          path:
+            'https://procomponents.ant.design/components/table/?current=1&pageSize=5',
+        },
       ],
+    },
+    {
+      tile: '物料管理',
+      path: 'https://appworks.site/materialCenter/antd.html',
     },
   ],
   extraBabelPlugins: [
@@ -29,7 +40,7 @@ export default defineConfig({
         libraryDirectory: 'es',
         style: true,
       },
-    ]
+    ],
   ],
   base: '/m-demo',
   publicPath: '/m-demo/',
@@ -39,7 +50,7 @@ export default defineConfig({
     pcComponents: resolve(__dirname, './src/Pc/src/components'),
   },
   dynamicImport: {
-    loading: '@/PC/AntdComponents/Loading',
+    loading: '@/AntdComponents/Loading',
   },
   // more config: https://d.umijs.org/config
 });
