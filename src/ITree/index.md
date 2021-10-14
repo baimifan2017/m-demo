@@ -1,17 +1,17 @@
 ---
 title: ITree
 group:
-  title: 功能组件
-  path: /pc
+  title: 输入组件
+  path: /input
 nav:
   title: components
   path: /components
-  order: 2
 ---
 
 ### 何时使用
 
 - 常用于左树右表的左右结构中
+- 带搜索的树状结构，可以根据实际使用需要进行功能删减。
 
 ### 基本使用
 
@@ -49,7 +49,3 @@ nav:
 | option | 请求配置，包含 header，method（默认 get） | string | -      |
 
 > **_注意_**：
-
-       1.可以在将控制功能按钮显示与隐藏条件写在listArr -> disable中，通过true｜false控制功能按钮显示隐藏权限。
-
-       2.type 图标使用suid中ExtIcon (http://10.4.69.36:1024/components/ext-icon-cn/) 只用传入type即可，例如<Icon type="plus" /> 传入plus。

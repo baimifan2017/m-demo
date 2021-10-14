@@ -1,7 +1,7 @@
 ---
 title: ErrorBoundary
 group:
-  path: /pc
+  path: /other
 nav:
   title: components
   path: /components

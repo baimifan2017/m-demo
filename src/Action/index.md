@@ -1,17 +1,17 @@
 ---
 title: Action
 group:
-  path: /pc
+  title: 其他
+  path: /other
 nav:
   title: components
   path: /components
-  order: 1
 ---
 
 ### 何时使用
 
 - Table 中的操作按钮
-- 默认3个功能按钮，超过 3 个功能按钮，更多部分为省略号。
+- 默认 3 个功能按钮，超过 3 个功能按钮，更多部分为省略号。
 
 ### 基本使用
 
@@ -19,22 +19,22 @@ nav:
 
 ### API
 
-| 参数    | 说明           | 类型                               | 默认值 |
-| ------- | -------------- | ---------------------------------- | ------ |
-| onClick | 点击事件         | function(type:string,record:object)| -      |
-| itemArr | 功能按钮数组      | array                             | -      |
-| record  | 当前行render中record       | object                | -      |
-| size    | 操作按钮间隔       | object                | -      |
+| 参数    | 说明                    | 类型                                | 默认值 |
+| ------- | ----------------------- | ----------------------------------- | ------ |
+| onClick | 点击事件                | function(type:string,record:object) | -      |
+| itemArr | 功能按钮数组            | array                               | -      |
+| record  | 当前行 render 中 record | object                              | -      |
+| size    | 操作按钮间隔            | object                              | -      |
 
 #### itemArr
 
 - 功能项目数组,控制功能项。
 
-| 参数               | 说明                                                          | 类型                    | 默认值  |
-| ----------------- | ------------------------------------------------------------- | ----------------------- | ------- |
-| name              | 当前功能项名称（必填）                                            | string                  | -       |
-| powerCode         | 功能权限code。(必填)                                             | string                  | -       |
-| hidden            | 是否隐藏当前功能                                                  | boolean                  | -       |
+| 参数      | 说明                   | 类型    | 默认值 |
+| --------- | ---------------------- | ------- | ------ |
+| name      | 当前功能项名称（必填） | string  | -      |
+| powerCode | 功能权限 code。(必填)  | string  | -      |
+| hidden    | 是否隐藏当前功能       | boolean | -      |
 
 > **_注意_**：
 

@@ -32,9 +32,27 @@ export default () => {
   };
 
   const dataSource = [
-    { name: '张三', email: '51521212@qq.com', age: 21, address: '这是地址1', key: '1' },
-    { name: '张三', email: '51521212@qq.com', age: 22, address: '这是地址2', key: '2' },
-    { name: '张三', email: '51521212@qq.com', age: 23, address: '这是地址3', key: '3' },
+    {
+      name: '张三',
+      email: '51521212@qq.com',
+      age: 21,
+      address: '这是地址1',
+      key: '1',
+    },
+    {
+      name: '张三',
+      email: '51521212@qq.com',
+      age: 22,
+      address: '这是地址2',
+      key: '2',
+    },
+    {
+      name: '张三',
+      email: '51521212@qq.com',
+      age: 23,
+      address: '这是地址3',
+      key: '3',
+    },
   ];
 
   return (
@@ -48,7 +66,9 @@ export default () => {
         {
           title: '操作',
           width: 120,
-          render: (_, record) => <Action onClick={handleClick} itemArr={itemArr} record={record} />,
+          render: (_, record) => (
+            <Action onClick={handleClick} itemArr={itemArr} record={record} />
+          ),
         },
       ]}
       dataSource={dataSource}
