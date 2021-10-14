@@ -1,14 +1,3 @@
----
-title: ComboList
-nav:
-  title: components
-  path: /components
-group:
-  path: /input
-  title: 输入组件
-  order: 1
----
-
 ## 基本使用
 
 ```jsx

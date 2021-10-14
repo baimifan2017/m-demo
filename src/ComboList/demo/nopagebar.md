@@ -1,14 +1,3 @@
----
-title: ComboList
-nav:
-  title: components
-  path: /components
-group:
-  path: /input
-  title: 输入组件
-order: 1
----
-
 ## 不显示分页栏
 
 ```jsx

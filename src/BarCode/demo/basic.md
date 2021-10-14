@@ -1,13 +1,3 @@
----
-title: BarCode
-nav:
-  title: components
-  path: /components
-group:
-  path: /display
-  title: 展示组件
----
-
 ## 最简单的用法
 
 只需要`encodeText`属性

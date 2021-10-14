@@ -1,14 +1,3 @@
----
-title: ComboList
-nav:
-  title: components
-  path: /components
-group:
-  path: /input
-  title: 输入组件
-order: 1
----
-
 ## 自定义渲染列表
 
 ```jsx

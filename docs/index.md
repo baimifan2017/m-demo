@@ -1,7 +1,7 @@
 ---
 hero:
   title: m-demo
-  desc: dumi site app example
+  desc: 这是一个简单自定义组件库，用于维护常用组件！
   actions:
     - text: Getting Started
       link: /getting-started
@@ -18,8 +18,8 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
 
-## 
+##
+
 > 1. 安装方式： npm install m-demo
 > 2. 维护人：xxx
 > 3. 维护人联系方式：xxx
-
