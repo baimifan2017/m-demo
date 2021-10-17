@@ -1,0 +1,16 @@
+export default {
+    upload: '上传',
+    download: '下载',
+    delete: '删除',
+    preview: '预览',
+    list: '列表模式',
+    icon: '缩略图模式',
+    selectAll: '全选',
+    reverseSelect: '反选',
+    empty: '附件列表是空的',
+    fileSize: '文件大小',
+    uploadedTime: '上传时间',
+    deleteConfirm: '确定要删除吗？提示：删除后不可恢复',
+    batchDeleteConfirm: '确定要删除选择的附件（{count}）吗？提示：删除后不可恢复',
+    validMessage: '选择的文件格式不正确，文件类型要求为{typeList}的文件',
+};

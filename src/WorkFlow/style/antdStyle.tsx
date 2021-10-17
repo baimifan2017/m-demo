@@ -1,0 +1,11 @@
+import 'antd/es/radio/style';
+import 'antd/es/input/style';
+import 'antd/es/message/style';
+import 'antd/es/button/style';
+import 'antd/es/alert/style';
+import 'antd/es/collapse/style';
+import 'antd/es/tag/style';
+import 'antd/es/switch/style';
+import 'antd/es/row/style';
+import 'antd/es/col/style';
+import 'antd/es/tree/style';

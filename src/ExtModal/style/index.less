@@ -1,0 +1,18 @@
+@import '../../style/themes/index';
+
+.ext-modal {
+  .div_wrapper_line:hover {
+    cursor: e-resize;
+  }
+
+  .div_wrapper_line::after {
+    position: absolute;
+    top: 0;
+    right: -15px;
+    bottom: 0;
+    left: -15px;
+    display: inline-block;
+    height: 100%;
+    content: '';
+  }
+}

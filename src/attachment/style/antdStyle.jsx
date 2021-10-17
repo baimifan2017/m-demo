@@ -1,0 +1,15 @@
+import 'antd/es/upload/style';
+import 'antd/es/list/style';
+import 'antd/es/button/style';
+import 'antd/es/message/style';
+import 'antd/es/icon/style';
+import 'antd/es/tooltip/style';
+import 'antd/es/avatar/style';
+import 'antd/es/progress/style';
+import 'antd/es/row/style';
+import 'antd/es/col/style';
+import 'antd/es/empty/style';
+import 'antd/es/popconfirm/style';
+import 'antd/es/card/style';
+import 'antd/es/dropdown/style';
+import 'antd/es/menu/style';

@@ -1,0 +1,39 @@
+@import '../../style/index';
+
+.template-download {
+  margin-bottom: 8px;
+
+  .select {
+    min-width: 168px;
+    margin: 0 12px 0 0;
+  }
+
+  .ant-upload-list {
+    padding-top: 16px;
+    border-top: 1px solid fade(@normal-color, 40%);
+  }
+
+  .ant-upload-list-item {
+    cursor: pointer;
+
+    .anticon-close {
+      top: 4px;
+      right: 4px;
+      font-size: 16px;
+    }
+  }
+
+  .list {
+    .ant-upload-list-item {
+      margin-top: 0;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom: 1px solid fade(@normal-color, 40%);
+      border-left-color: transparent;
+
+      &:hover {
+        background-color: fade(@primary-color, 10%);
+      }
+    }
+  }
+}

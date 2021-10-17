@@ -1,0 +1,177 @@
+@import '../../style/themes/index.less';
+.seid-attachment {
+  position: relative;
+  .attachment-tool-bar {
+    border-bottom: 1px solid #ebedf0;
+    .tool-action {
+      .action-item {
+        margin-right: 8px;
+        display: inline-block;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .right-box {
+      .tool-box {
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        .tool-item {
+          border-radius: @border-radius-base;
+          display: inline-flex;
+          text-align: center;
+          overflow: hidden;
+          width: 32px;
+          height: 32px;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          color: fade(@black, 65%);
+          transition: background-color ease 0.3s;
+          &.ant-dropdown-open,
+          &:hover {
+            color: @primary-color;
+            background-color: fade(@primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+  .attachment-body {
+    .file-empty {
+      padding: 16px;
+      .ant-empty-image {
+        height: 80px;
+      }
+      .ant-empty-description {
+        color: fade(@black, 45%);
+      }
+    }
+    .attachment-file-list-box {
+      .file-item-icon-box {
+        .ant-col {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+  .seid-file-upload {
+    position: relative;
+  }
+}
+
+.seid-file-item {
+  position: relative;
+  &.ant-list-item {
+    padding: 12px 8px;
+  }
+  &.error {
+    border-color: @btn-danger-bg;
+    .ant-card-meta-title,
+    .ant-list-item-meta-title {
+      color: @btn-danger-bg;
+    }
+  }
+  .select-action {
+    position: absolute;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    right: 8px;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 2px;
+    visibility: hidden;
+    text-align: center;
+    background: #bbb;
+    color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 0 0 2px #fff;
+    opacity: 0.7;
+    transform: scale(0.5);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  &:hover {
+    background-color: fade(@black, 1%);
+    .select-action {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .ant-avatar {
+    background-color: transparent;
+  }
+  .ant-progress-text {
+    font-size: 10px;
+  }
+  &.selected {
+    background-color: @seid-row-select;
+    .select-action {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      color: #fff;
+      background: @success-color;
+      box-shadow: 0 0 0 2px #fff;
+    }
+  }
+  &.view-type-card {
+    .ant-card-cover {
+      text-align: center !important;
+      padding: 24px 0 0 0;
+      .ant-avatar {
+        margin: 0 auto;
+      }
+    }
+    .ant-card-actions {
+      > li {
+        margin: 4px 0;
+      }
+    }
+  }
+  .file-item-tool-item {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: @border-radius-base;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: fade(@black, 5%);
+    }
+    &.ant-popover-open,
+    &.delete:hover {
+      color: @error-color !important;
+      background-color: fade(@error-color, 15%) !important;
+    }
+    &.anticon {
+      line-height: 32px;
+      width: 32px;
+    }
+  }
+  .desc-box {
+    .desc-item {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 8px;
+      .label {
+        &:after {
+          content: ':';
+          margin: 0 4px;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .ant-progress {
+    position: absolute;
+    right: 8px;
+    top: 22px;
+  }
+}
