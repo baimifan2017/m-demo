@@ -1,7 +1,4 @@
----
-order: 6
-title: objectAssignHave
----
+## objectAssignHave
 
 ## zh-CN
 
@@ -12,17 +9,17 @@ title: objectAssignHave
 objectAssignHave example.
 
 ```jsx
+import React from 'react';
 import { utils } from 'm-demo';
 
 const { objectAssignHave } = utils;
 
-function Demo() {
+
+export default () => {
   const tartget = { name: '张三', tip: '你好' };
   const source = { name: '李四', age: 45 };
   objectAssignHave(tartget, source);
   const result = JSON.stringify(tartget);
   return <div>{result}</div>;
 }
-
-ReactDOM.render(<Demo />, mountNode);
 ```

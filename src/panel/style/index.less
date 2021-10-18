@@ -1,0 +1,202 @@
+@import '../../style/themes/index';
+
+.seid-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: @white;
+  .panel-header {
+    position: relative;
+    height: 40px;
+    color: fade(@black, 85%);
+    font-weight: 600;
+    line-height: 40px;
+    background: #fafafa;
+    border-bottom: 0;
+    border-radius: 4px 4px 0 0;
+    &-title {
+      display: inline-block;
+      padding-left: 8px;
+    }
+    .toolbox {
+      position: absolute;
+      right: 0;
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+      .tool-item {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding-top: 1px;
+        color: fade(@black, 30%);
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          color: @primary-color;
+          background-color: fade(@black, 2%);
+        }
+        &.remove:hover {
+          color: @btn-danger-bg;
+          background-color: fade(@btn-danger-bg, 5%);
+        }
+      }
+      .ant-popover {
+        width: max-content;
+      }
+    }
+  }
+  .panel-body {
+    position: relative;
+    display: flex;
+    flex: auto;
+    overflow: hidden;
+    background-color: @white;
+    .scrollbar-container {
+      width: 100%;
+    }
+    .panel-content {
+      flex: auto;
+      width: 100%;
+      padding: 16px;
+    }
+  }
+  &.panel-bordered {
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    .panel-body {
+      border-top: 1px solid #e5e5e5;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+  &.panel-full-screen {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 999 !important;
+    width: 100% !important;
+    height: 100% !important;
+    .panel-body {
+      height: calc(100vh - 40px);
+      max-height: calc(100vh - 40px);
+      overflow: hidden;
+    }
+  }
+  &.panel-collapsed {
+    .panel-body {
+      max-height: 0;
+    }
+  }
+  &.cover {
+    .panel-content {
+      padding: 0;
+    }
+  }
+  &.portal {
+    .panel-header {
+      &-title {
+        padding-left: 24px;
+      }
+      .seid-drag-handler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        align-items: center;
+        width: 28px;
+        height: 40px;
+        color: fade(@black, 45%);
+        font-size: 24px;
+        visibility: visible;
+        cursor: move;
+      }
+    }
+    &.no-drag,
+    &.panel-full-screen {
+      .panel-header {
+        &-title {
+          padding-left: 8px;
+        }
+      }
+      .seid-drag-handler {
+        visibility: hidden;
+      }
+    }
+    &.auto-hide-toolbar {
+      .panel-header {
+        &-title {
+          padding-left: 8px;
+        }
+      }
+      .toolbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        padding: 4px;
+        background-color: fade(@black, 0%);
+        border-radius: 4px 4px 0 0;
+        transition: all 0.3s ease;
+        .tool-item {
+          display: block;
+          width: 32px;
+          height: 32px;
+          color: @white;
+          font-size: 14px;
+          line-height: 32px;
+          text-align: center;
+          border-radius: 3px;
+          cursor: pointer;
+          &:hover {
+            background-color: fade(@white, 15%);
+          }
+          &.remove:hover {
+            color: @btn-danger-bg;
+            background-color: fade(@btn-danger-bg, 5%);
+          }
+        }
+        .ant-popover {
+          z-index: 999;
+          width: max-content;
+        }
+      }
+      .seid-drag-handler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        color: @white;
+        font-size: 24px;
+        background-color: fade(@black, 0%);
+        border-radius: 4px 4px 0 0;
+        cursor: move;
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        border: 1px solid fade(@black, 65%);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        .toolbox {
+          top: -40px;
+          background-color: fade(@black, 65%);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+        .seid-drag-handler {
+          top: -40px;
+          background-color: fade(@black, 65%);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+          &:hover {
+            background-color: fade(@black, 50%);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button, { ButtonProps } from 'antd/es/button';
-import AuthWidget from '../auth-widget';
+import AuthWidget from '../AuthWidget';
 
 class AButton extends React.Component<ButtonProps, any> {
   constructor(props: ButtonProps) {

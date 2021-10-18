@@ -92,16 +92,16 @@ export const setCommonJsonArrayNest = (
  * @param {*} isExternal 是否为外部http|https地址
  */
 export const getTabPaneData = ({
-  key,
-  title,
-  content,
-  url = '',
-  isWebDefault = false,
-  closable = false,
-  isMenu = true,
-  refKey = '',
-  isExternal = false,
-}: any): any => ({
+                                 key,
+                                 title,
+                                 content,
+                                 url = '',
+                                 isWebDefault = false,
+                                 closable = false,
+                                 isMenu = true,
+                                 refKey = '',
+                                 isExternal = false,
+                               }: any): any => ({
   key,
   title,
   content,
@@ -220,9 +220,13 @@ export function formatMsg(message: string, values: object) {
     }
     return '';
   };
-  return message.replace(/\{(\w+)\}/g, (_k: string, v: string) =>
-    isValidKey(v, values),
-  );
+
+  if (message) {
+    return message.replace(/\{(\w+)\}/g, (_k: string, v: string) =>
+      isValidKey(v, values),
+    );
+  }
+
 }
 
 /**
@@ -279,8 +283,8 @@ export function chineseAmount(amount: string | number) {
   let money = isFinite(amount)
     ? amount
     : isNaN(Number(amount))
-    ? 0
-    : Number(amount);
+      ? 0
+      : Number(amount);
   if (Number(money) < 0) {
     hasPrefix = true;
     money = -1 * Number(money);
@@ -354,10 +358,10 @@ export function chineseAmount(amount: string | number) {
 }
 
 function scrollToElement({
-  scrollBoxClassName = '',
-  targetId = '',
-  options = {},
-}) {
+                           scrollBoxClassName = '',
+                           targetId = '',
+                           options = {},
+                         }) {
   if (targetId) {
     let container = document.querySelector('div.order-scroll-bar');
     if (scrollBoxClassName) {

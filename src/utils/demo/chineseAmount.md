@@ -1,7 +1,4 @@
----
-order: 9
-title: chineseAmount
----## zh-CN
+## chineseAmount
 
 中文金额函数使用方式 举例。
 
@@ -10,13 +7,12 @@ title: chineseAmount
 chineseAmount usage example.
 
 ```jsx
+import React from 'react';
 import { utils } from 'm-demo';
 
 const { chineseAmount } = utils;
 
-function Demo() {
+export default () => {
   return <div>{chineseAmount(12345678.12)}</div>;
 }
-
-ReactDOM.render(<Demo />, mountNode);
 ```

@@ -1,6 +1,7 @@
 ---
 title: ErrorBoundary
 group:
+  title: 其它
   path: /other
 nav:
   title: components

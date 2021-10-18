@@ -1,8 +1,11 @@
 ---
-category: Components
-subtitle: 国际化
-type: 基础
-title: LocaleReceiver
+title: seiLocaleProvider
+group:
+  path: /other
+  title: 输入组件
+nav:
+  title: components
+  path: /components
 ---
 
 接收全局语言配置信息。

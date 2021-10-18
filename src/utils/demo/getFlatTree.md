@@ -1,7 +1,4 @@
----
-order: 8
-title: getFlatTree
----
+## getFlatTree
 
 ## zh-CN
 
@@ -12,6 +9,7 @@ title: getFlatTree
 getFlatTree example.
 
 ```jsx
+import React from 'react';
 import { utils } from 'm-demo';
 
 const { getFlatTree } = utils;
@@ -21,10 +19,8 @@ const treeData = [
   { id: '2', text: 'b' },
 ];
 
-function Demo() {
+export default () => {
   const flatTree = getFlatTree(treeData);
   return <div>{JSON.stringify(flatTree)}</div>;
 }
-
-ReactDOM.render(<Demo />, mountNode);
 ```

@@ -12,8 +12,14 @@ cols: 1
 
 -- 业务单据需要进入流程和审批时。
 
-## API
+## 启动流程
+<code src='./demo/startFlow.tsx'></code>
 
+## 审批
+<code src='./demo/approve.tsx'></code>
+
+## API
+  
 ## WorkFlow.StartFlow
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |

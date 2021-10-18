@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import Input from 'antd/es/input';
 import Tree from 'antd/es/tree';
-import ScrollBar from '../../scroll-bar';
-import ExtIcon from '../../ext-icon';
-import ListLoader from '../../list-loader';
+import ScrollBar from '../../ScrollBar';
+import ExtIcon from '../../ExtIcon';
+import ListLoader from '../../ListLoader';
 import { listAllOrgs } from '../service';
 import StoreProps from '../storeProps';
 import { LocaleItem } from '../../locale';

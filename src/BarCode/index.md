@@ -14,7 +14,14 @@ group:
 
 - 根据业务需要，决定是否使用
 
-<embed src="./demo/basic.md"></embed>
+
+## 最简单的用法
+
+只需要`encodeText`属性
+
+The simplest usage， only `encodeText` prop.
+
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

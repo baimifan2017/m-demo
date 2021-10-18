@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'react';
-import get from 'lodash/get';
-import omit from 'lodash/omit';
+import { get, omit } from 'lodash';
 import cls from 'classnames';
 import moment from 'moment';
 import Item from 'antd/es/list/Item';
 import Progress from 'antd/es/progress';
 import Card from 'antd/es/card';
 import Popconfirm from 'antd/es/popconfirm';
-import ExtIcon from '../ext-icon';
+import ExtIcon from '../ExtIcon';
 import getAvatar from './FileIcon';
-import IFileItemProps, { SecondField, IUploadFile } from './fileItemProps';
+import IFileItemProps, { IUploadFile, SecondField } from './fileItemProps';
 
 const uploadOptions = [
   'index',

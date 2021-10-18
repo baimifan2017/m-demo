@@ -1,7 +1,5 @@
 /*
- * @Author: Eason
  * @Date: 2020-02-14 19:17:59
- * @Last Modified by: Eason
  * @Last Modified time: 2020-02-15 16:44:09
  */
 import React, { PureComponent } from 'react';
@@ -10,7 +8,7 @@ import Alert from 'antd/es/alert';
 import Radio from 'antd/es/radio';
 import { LocaleItem } from '../locale';
 import StoreProps from './storeProps';
-import ListCard from '../list-card';
+import ListCard from '../ListCard';
 import AnyOneSelected from './User/AnyOneSelected';
 
 export interface NodeListProps {

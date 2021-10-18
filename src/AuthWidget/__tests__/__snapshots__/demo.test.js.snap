@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthWidget No Auth 1`] = `
+<Widget
+  authCode="authCode"
+/>
+`;
+
+exports[`AuthWidget no Contorl 1`] = `
+<input
+  class="ant-input"
+  type="text"
+  value=""
+/>
+`;

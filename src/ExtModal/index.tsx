@@ -1,12 +1,11 @@
 /*
- * @Author: zp
  * @Date:   2019-07-02 16:07:20
- * @Last Modified by:   zp
  * @Last Modified time: 2019-07-02 17:03:46
  */
 import React, { Component } from 'react';
 import Modal, { ModalProps } from 'antd/es/modal';
 import DragWrapper from './DragWrapper';
+import './style/index.less';
 
 export interface IExtModalProps extends ModalProps {}
 

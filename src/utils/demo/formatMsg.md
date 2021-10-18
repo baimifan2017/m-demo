@@ -1,7 +1,4 @@
----
-order: 4
-title: formatMsg
----
+## formatMsg
 
 ## zh-CN
 
@@ -12,14 +9,13 @@ formatMsg 举例。
 formatMsg example.
 
 ```jsx
+import React from 'react';
 import { utils } from 'm-demo';
 
 const { formatMsg } = utils;
 
-function Demo() {
+export default () => {
   const msg = { name: '张三', tip: '你好' };
   return <div>{formatMsg('{name},{tip}!', msg)}</div>;
 }
-
-ReactDOM.render(<Demo />, mountNode);
 ```

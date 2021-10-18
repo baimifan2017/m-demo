@@ -1,0 +1,266 @@
+@import '../../style/themes/index';
+.seid-ext-table {
+  .seid-panel {
+    box-shadow: none;
+    &.panel-bordered {
+      box-shadow: none;
+    }
+    .panel-header {
+      background-color: @white;
+    }
+  }
+  &.no-title {
+    .seid-panel {
+      .panel-body {
+        border-top-color: transparent;
+      }
+    }
+  }
+  .seid-ext-table-toolbar {
+    .search-item {
+      margin: 0 8px;
+      display: inline-block;
+    }
+  }
+  .ant-spin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .ant-spin-nested-loading {
+    height: 100%;
+  }
+  table {
+    background: @white;
+    tr:nth-child(odd) {
+      background-color: @white;
+    }
+    tr:nth-child(even) {
+      background-color: fade(@black, 1%);
+    }
+  }
+  .ant-table-thead > tr > th {
+    overflow: hidden;
+    color: fade(@black, 65%);
+    font-weight: 700;
+    text-overflow: ellipsis;
+  }
+  .ant-table-bordered .ant-table-thead > tr > th {
+    border-right-color: @table-header-bg;
+  }
+  .ant-table-bordered .ant-table-tbody > tr > td {
+    border-right-color: transparent;
+  }
+  .ant-table-bordered .ant-table-header > table,
+  .ant-table-bordered .ant-table-body > table,
+  .ant-table-bordered .ant-table-fixed-left table,
+  .ant-table-bordered .ant-table-fixed-right table {
+    border-color: transparent;
+  }
+  .ant-table-thead > tr:hover.ant-table-row-selected > td,
+  .ant-table-tbody > tr:hover.ant-table-row-selected > td,
+  .ant-table-tbody > tr.ant-table-row-selected td,
+  .ant-table-content .ant-table-tbody .ant-table-row.tr-selected > td {
+    background-color: @seid-row-select;
+  }
+  .ant-table-content {
+    .ant-table-placeholder {
+      position: relative;
+    }
+  }
+  .react-resizable {
+    position: relative;
+    background-clip: padding-box;
+    &:hover {
+      background-color: fade(@black, 5%);
+    }
+  }
+  .react-resizable-handle {
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+    z-index: 1;
+    width: 10px;
+    height: 100%;
+    background-color: transparent;
+    background-image: none;
+    cursor: col-resize;
+    user-select: none;
+  }
+  .ant-table-pagination.ant-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: none;
+    width: 100%;
+    height: 48px;
+    margin: 0;
+    overflow: hidden;
+    line-height: 48px;
+    background-color: @seid-page-bar-bg;
+  }
+  .ant-table-pagination.ant-pagination-simple {
+    line-height: normal;
+  }
+  .ant-table-thead > tr > th {
+    &.row-seq {
+      .ant-table-header-column {
+        width: 100%;
+        .ext-table-tool-trigger {
+          color: fade(@black, 35%);
+          cursor: pointer;
+          transition: all ease 0.2s;
+          &.ant-dropdown-open,
+          &:hover {
+            color: fade(@black, 65%);
+          }
+          .anticon-down {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+  .ant-table-content {
+    .ant-table-placeholder {
+      position: absolute;
+      top: 20%;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border: none;
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
+  .ant-table-bordered.ant-table-empty .ant-table-placeholder {
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+.ext-table-tool-menu-box {
+  .ant-dropdown-menu-item {
+    padding: 4px 16px;
+    i,
+    span > i {
+      margin-right: 8px;
+    }
+    &.colmun {
+      padding: 0;
+      span {
+        display: inline-block;
+        padding: 4px 16px;
+      }
+      .ant-popover-open {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+.ext-table-tool-menu-popover-box {
+  z-index: 1050;
+  .ant-list-empty-text {
+    padding: 0;
+    .ant-empty-normal {
+      margin: 16px;
+    }
+  }
+  .column-assign-box {
+    position: relative;
+    width: 420px;
+    overflow: hidden;
+    .source-column-box {
+      border-right: 2px solid @border-color-split;
+    }
+    .column-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 42px;
+      overflow: hidden;
+      line-height: 42px;
+      border-bottom: 2px solid @border-color-split;
+      .title {
+        margin-left: 16px;
+        color: fade(@black, 85%);
+        font-weight: 700;
+      }
+      .action-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: fade(@black, 45%);
+        font-size: 16px;
+        transition: all 0.3s ease;
+        i:hover {
+          color: @primary-color;
+        }
+      }
+    }
+    .column-body {
+      max-height: 320px;
+      overflow: hidden;
+      position: relative;
+      transition: background-color 0.2s ease 0s, opacity 0.1s ease 0s;
+      .drag-list {
+        position: relative;
+        max-height: 320px;
+      }
+      .scrollbar-container {
+        width: 100%;
+        max-height: 320px;
+      }
+      .ant-list-item {
+        padding: 4px 0;
+        border: none;
+        &:nth-child(odd) {
+          background-color: @white;
+        }
+        &:nth-child(even) {
+          background-color: fade(@black, 1%);
+        }
+        .ant-list-item-meta {
+          &.required {
+            .ant-list-item-meta-title {
+              color: fade(@black, 35%);
+            }
+          }
+        }
+      }
+      .drag-column-item {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+        user-select: none;
+        cursor: move;
+        &:nth-child(odd) {
+          background-color: @white;
+        }
+        &:nth-child(even) {
+          background-color: fade(@black, 1%);
+        }
+        &.required {
+          .title {
+            color: fade(@black, 35%);
+          }
+        }
+        &.dragging {
+          cursor: grabbing;
+          user-select: none;
+          pointer-events: all;
+          background-color: @seid-row-select;
+          box-shadow: @box-shadow-base;
+        }
+      }
+      .sort-handler {
+        color: fade(@black, 35%);
+        font-size: 24px;
+      }
+    }
+  }
+}

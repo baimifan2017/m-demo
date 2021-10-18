@@ -1,9 +1,4 @@
----
-order: 0
-title:
-  zh-CN: UUID
-  en-US: UUID
----
+## UUID
 
 ## zh-CN
 
@@ -14,6 +9,7 @@ title:
 UUID example.
 
 ```jsx
+import React from 'react';
 import { Button } from 'antd';
 import { utils } from 'm-demo';
 
@@ -49,5 +45,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, mountNode);
+export default Demo;
 ```

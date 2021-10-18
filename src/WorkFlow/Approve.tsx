@@ -1,6 +1,5 @@
 /*
  * @Date: 2020-02-17 17:25:30
- * @Last Modified by: Eason
  * @Last Modified time: 2020-02-17 17:25:59
  */
 import React, { Component, CSSProperties } from 'react';
@@ -8,8 +7,8 @@ import cls from 'classnames';
 import Layout from 'antd/es/layout';
 import Tabs from 'antd/es/tabs';
 import Empty from 'antd/es/empty';
-import ListLoader from '../list-loader';
-import ScrollBar from '../scrollBar';
+import ListLoader from '../ListLoader';
+import ScrollBar from '../ScrollBar';
 import SeidLocaleReceiver from '../seid-locale-provider/SeidLocaleReceiver';
 import { LocaleItem } from '../locale';
 import defaultLocale from './locale';

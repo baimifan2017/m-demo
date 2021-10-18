@@ -1,7 +1,6 @@
 /*
 
  * @Date: 2020-02-15 11:53:29
- * @Last Modified by: Eason
  * @Last Modified time: 2020-02-17 09:43:50
  */
 import React, { Component } from 'react';
@@ -11,8 +10,8 @@ import Row from 'antd/es/row';
 import Col from 'antd/es/col';
 import Radio from 'antd/es/radio';
 import Button from 'antd/es/button';
-import ListCard from '../../list-card';
-import ListLoader from '../../list-loader';
+import ListCard from '../../ListCard';
+import ListLoader from '../../ListLoader';
 import StoreProps from '../storeProps';
 import { LocaleItem } from '../../locale';
 import Organization from './Organization';

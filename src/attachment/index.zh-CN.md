@@ -1,16 +1,41 @@
 ---
-category: Components
-subtitle: 附件管理
-type: 基础
 title: Attachment
-cols: 1
+group:
+  title: 输入组件
+  path: /input
+nav:
+  title: components
+  path: /components
 ---
+
 
 附件管理组件，丰富`Upload`文件上传组件；
 
 ## 何时使用
 
 - 文件上传控制时使用。
+
+## 最简单使用
+```jsx
+import React from 'react';
+import { Attachment } from 'm-demo';
+import get from 'lodash/get';
+
+const attachmentProps = {
+  serviceHost: 'http://10.4.208.87',
+  multiple: true,
+};
+
+export default () => <Attachment {...attachmentProps} />;
+```
+
+## 文件列表初始化
+文件项操作扩展。
+
+<code src="./demo/initFileList.tsx"></code>
+
+## 限制文件类型
+<code src="./demo/limitFileExt.tsx"></code>
 
 ## API
 

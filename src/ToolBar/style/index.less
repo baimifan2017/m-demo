@@ -1,0 +1,51 @@
+@import '../../style/themes/index';
+
+.seid-tool-bar {
+  position: relative;
+  height: 46px;
+  margin: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  line-height: 45px;
+
+  .tool-box {
+    overflow: hidden;
+
+    &-left,
+    &-right {
+      height: 100%;
+    }
+
+    &-right {
+      text-align: right;
+    }
+
+    &-left > .left-box,
+    &-right > .right-box {
+      height: 100%;
+
+      > * {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.has-extra {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.seid-float-tool-bar-left,
+.seid-float-tool-bar-right {
+  .ant-popover-inner-content {
+    > * {
+      margin-top: 8px;
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+  }
+}

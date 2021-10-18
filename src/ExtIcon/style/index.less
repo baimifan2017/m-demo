@@ -1,0 +1,54 @@
+@import '../../style/themes/index';
+@import './animate.less';
+
+.seid-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: @icon-color;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em; // for SVG icon, see https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  .svg-icon {
+    width: 1em;
+    height: 1em;
+    margin: 0 auto;
+    overflow: hidden;
+    fill: currentColor;
+  }
+  &.spin {
+    .svg-icon,
+    &::before {
+      display: inline-block;
+      animation: seid-loadingCircle 1s infinite linear;
+    }
+  }
+  &.click {
+    cursor: pointer;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    svg {
+      fill: fade(@black, 45%);
+    }
+  }
+  svg {
+    display: inline-block;
+  }
+}
+
+@keyframes seid-loadingCircle {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
+  }
+}

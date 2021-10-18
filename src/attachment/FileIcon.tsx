@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from 'antd/es/avatar';
 import { IUploadFile } from './fileItemProps';
-import ExtIcon from '../ext-icon';
+import ExtIcon from '../ExtIcon';
 
 export default function getAvatar(file: IUploadFile, size: number) {
   const { name, fileName, thumbUrl } = file;

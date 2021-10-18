@@ -1,8 +1,11 @@
 ---
-category: Components
-subtitle: 工具类或方法
-type: 工具类或方法
-title: utils
+title: Utils
+group:
+  title: 输入组件
+  path: /other
+nav:
+  title: components
+  path: /components
 ---
 
 ## 何时使用

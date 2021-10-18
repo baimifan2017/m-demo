@@ -1,7 +1,5 @@
 /*
- * @Author: Eason
  * @Date: 2020-02-17 17:25:19
- * @Last Modified by:   Eason
  * @Last Modified time: 2020-02-17 17:25:19
  */
 import { Method } from 'axios';

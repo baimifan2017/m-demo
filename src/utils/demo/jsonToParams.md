@@ -1,7 +1,4 @@
----
-order: 2
-title: jsonToParams
----
+## jsonToParams
 
 ## zh-CN
 
@@ -12,14 +9,15 @@ jsonToParams 举例。
 jsonToParams example.
 
 ```jsx
+import React from 'react';
 import { utils } from 'm-demo';
 
 const { jsonToParams } = utils;
 
-function Demo() {
+export default () => {
+
   const json = { a: 1, b: 2 };
   return <div>{jsonToParams(json)}</div>;
 }
 
-ReactDOM.render(<Demo />, mountNode);
 ```

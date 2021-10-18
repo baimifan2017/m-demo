@@ -1,0 +1,55 @@
+@import '../../style/themes/index';
+
+.seid-list-loader {
+  &.spinning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    &.hidden {
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 1s ease 0.5s, z-index 0.1s ease 1.5s;
+    }
+    div {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin: 2px;
+      background-color: fade(@primary-color, 65%);
+      border-radius: 100%;
+      animation: ball-beat 0.7s 0s infinite linear;
+      animation-fill-mode: both;
+    }
+    div:nth-child(2n-1) {
+      animation-delay: 0.35s !important;
+    }
+  }
+
+  @-webkit-keyframes ball-beat {
+    50% {
+      transform: scale(0.75);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ball-beat {
+    50% {
+      transform: scale(0.75);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

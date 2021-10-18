@@ -1,11 +1,11 @@
 ---
-title: ComboList
+title: ComboList 
 nav:
-  title: components
-  path: /components
+  title: components 
+  path: /components 
 group:
-  path: /input
-  title: 输入组件
+  path: /input 
+  title: 输入组件 
   order: 1
 ---
 
@@ -14,9 +14,21 @@ group:
 - 有大量的数据需要加载（包括本地分页和远程分页）。
 - 显示的属性字段相对较少。
 
-<embed src="./demo/basic.md"></embed>
-<embed src="./demo/customListItem.md"></embed>
-<embed src="./demo/nopagebar.md"></embed>
+## 基础使用
+
+<code src="./demo/basic.tsx"></code>
+
+## 自定义下拉
+
+<code src="./demo/customListItem.tsx"></code>
+
+## 无分页条
+
+<code src="./demo/nopagebar.tsx"></code>
+
+## 远程加载
+
+<code src="./demo/remoteData.tsx"></code>
 
 ## API
 

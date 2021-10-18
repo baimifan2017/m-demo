@@ -12,7 +12,7 @@ nav:
 
 - 当组件内部需要滚动时，自动禁用浏览器原生滚动条，使用自定义滚动条。
 
-<embed src="./demo/basic.md"></embed>
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

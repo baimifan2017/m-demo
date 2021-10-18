@@ -1,9 +1,4 @@
----
-order: 10
-title:
-  zh-CN: scrollToElement
-  en-US: scrollToElement
----
+## scrollToElement
 
 ## zh-CN
 
@@ -62,5 +57,5 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, mountNode);
+export default App
 ```

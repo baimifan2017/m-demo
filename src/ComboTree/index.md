@@ -12,7 +12,8 @@ nav:
 
 - 显示具有层级的树型结构的数据。
 
-<embed src="./demo/basic.md"></embed>
+## 基本使用
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

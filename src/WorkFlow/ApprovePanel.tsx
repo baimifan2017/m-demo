@@ -9,9 +9,9 @@ import Radio from 'antd/es/radio';
 import Modal from 'antd/es/modal';
 import Timeline from 'antd/es/timeline';
 import Menu from 'antd/es/menu';
-import ExtIcon from '../ext-icon';
+import ExtIcon from '../ExtIcon';
 import { formatMsg } from '../utils';
-import ScrollBar from '../scroll-bar';
+import ScrollBar from '../ScrollBar';
 import { LocaleItem } from '../locale';
 import StoreProps from './storeProps';
 

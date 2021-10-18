@@ -1,8 +1,8 @@
 ---
 title: Action
 group:
-  title: 其他
-  path: /other
+  title: 输入组件
+  path: /input
 nav:
   title: components
   path: /components

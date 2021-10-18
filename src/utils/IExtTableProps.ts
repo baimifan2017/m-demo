@@ -3,11 +3,8 @@
  *@describe:
  *@time:
  */
-import React, { Component, CSSProperties, ReactNode } from 'react';
-import { ColumnProps, TableProps } from 'antd/es/table';
-import { RuleObject } from 'antd/es/form';
-
-import { PaginationProps } from 'antd/es/pagination';
+import React, { CSSProperties, ReactNode } from 'react';
+import { ColumnProps } from 'antd/es/table';
 
 declare interface StoreProps {
   /**

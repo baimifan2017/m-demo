@@ -1,6 +1,5 @@
 /*
  * @Date: 2020-02-14 15:12:29
- * @Last Modified by: Eason
  * @Last Modified time: 2020-02-17 17:30:10
  */
 import React, { Component } from 'react';
@@ -11,9 +10,9 @@ import message from 'antd/es/message';
 import Button, { ButtonProps } from 'antd/es/button';
 import Input from 'antd/es/input';
 import Tooltip from 'antd/es/tooltip';
-import ExtModal from '../ext-modal';
-import ComboList from '../combo-list';
-import ListLoader from '../list-loader';
+import ExtModal from '../ExtModal';
+import ComboList from '../ComboList';
+import ListLoader from '../ListLoader';
 import { request, formatMsg } from '../utils';
 import StoreProps from './storeProps';
 import SeidLocaleReceiver from '../seid-locale-provider/SeidLocaleReceiver';

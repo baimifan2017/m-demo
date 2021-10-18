@@ -3,12 +3,12 @@
  */
 
 import React, { useRef } from 'react';
+// @ts-ignore
 import { ITree } from 'm-demo';
 import { Button, Popconfirm, Popover } from 'antd';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
 
 import { MinusCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import request from 'umi-request';
 
 export interface RightFormProps {
   handleAdd?: () => void;

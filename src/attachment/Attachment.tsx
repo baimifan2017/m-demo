@@ -18,15 +18,16 @@ import { RcCustomRequestOptions } from 'antd/es/upload/interface';
 import Upload, { RcFile, UploadChangeParam, UploadProps } from 'antd/es/upload';
 import { request, formatMsg } from '../utils';
 import { ResponseResult, AxiosRequestConfig, AxiosResponse } from '../utils/request';
-import ExtIcon from '../ext-icon';
-import Animate from '../animate';
-import ToolBar from '../tool-bar';
+import ExtIcon from '../ExtIcon';
+import Animate from '../Animate';
+import ToolBar from '../ToolBar';
 import defaultLocale from './locale';
 import { LocaleItem } from '../locale';
 import SeidLocaleReceiver from '../seid-locale-provider/SeidLocaleReceiver';
 import { isPhoto } from '../_util/utils';
 import FileItem from './FileItem';
 import { IUploadFile } from './fileItemProps';
+import './style/index.less'
 
 export type ViewType = 'list' | 'card';
 

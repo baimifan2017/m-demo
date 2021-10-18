@@ -1,6 +1,5 @@
 /*
  * @Date: 2020-02-14 17:16:58
- * @Last Modified by: Eason
  * @Last Modified time: 2020-02-15 17:02:16
  */
 
@@ -10,7 +9,7 @@ import { toLower, isEqual } from 'lodash';
 import Collapse from 'antd/es/collapse';
 import Tag from 'antd/es/tag';
 import Switch from 'antd/es/switch';
-import ScrollBar from '../scrollBar';
+import ScrollBar from '../ScrollBar';
 import StoreProps from './storeProps';
 import { LocaleItem } from '../locale';
 import UserList from './UserList';

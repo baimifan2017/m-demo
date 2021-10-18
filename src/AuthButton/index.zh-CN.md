@@ -1,8 +1,11 @@
 ---
-category: Components
-subtitle: 按钮
-type: 业务
 title: AuthButton
+group:
+  title: 展示组件
+  path: /display
+nav:
+  title: components
+  path: /components
 ---
 
 由 AuthWidget 包裹，控制方式与 AuthWidget 相同，传入 authCode 或 authorities 参数控制组件渲染。
@@ -10,6 +13,29 @@ title: AuthButton
 ## 何时使用
 
 - 需要控制用户权限是否能够使用输入框时。
+
+## 基本使用
+```jsx
+import React from 'react';
+import { AuthButton } from 'm-demo';
+
+export default () => <AuthButton type="primary">123</AuthButton>
+
+```
+
+
+## 带有 AuthCode
+
+当权限校验不通过时，当前组件不渲染。
+```jsx
+import React from 'react';
+import { AuthButton } from 'm-demo';
+
+export default () =>  <AuthButton authCode="authCode" type="primary">
+  123
+</AuthButton>;
+
+```
 
 ## API
 
