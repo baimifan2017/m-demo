@@ -21,4 +21,4 @@ nav:
 | 参数    | 说明                                                                  | 类型    | 默认值 | 版本 |
 | ------- | --------------------------------------------------------------------- | ------- | ------ | ---- |
 | options | [选项配置](https://github.com/mdbootstrap/perfect-scrollbar#options)  | Options | -      |      |
-| ...     | 更多属性[请参考](https://github.com/goldenyz/react-perfect-scrollbar) | mixed   | -      |      |
+| ...     | 更多属性[请参考](https://www.npmjs.com/package/react-custom-scrollbars) | mixed   | -      |      |
