@@ -42,15 +42,21 @@ export default defineConfig({
       },
     ],
   ],
+  styles: [ `body { color: red; }`,`https://./site/static/theme.less`,`./site/static/animate.less`,`./site/static/index.less`],
   base: '/m-demo',
   publicPath: '/m-demo/',
   alias: {
     '@': resolve(__dirname, './src'),
+    'm-demo': resolve(__dirname, './src'),
     // 'm-demo': resolve(__dirname, './src'),
     pcComponents: resolve(__dirname, './src/Pc/src/components'),
   },
   dynamicImport: {
     loading: '@/AntdComponents/Loading',
+  },
+  theme: {
+    // 主题配置
+    // '@primary-color': '#d90921',
   },
   // more config: https://d.umijs.org/config
 });
