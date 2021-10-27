@@ -10,10 +10,10 @@ nav:
 
 
 A New Component
-
+  
 ## 何时使用
 
-
+  
 ## 基本使用
 
 基本使用。
@@ -36,6 +36,7 @@ export default () => <ToolBar {...props} />
 通过传入 Style 内容控制三个区域的样式展示效果。
 
 ```jsx
+import React from 'react';
 import { Input, Button } from 'antd';
 import { ToolBar } from 'm-demo';
 
@@ -58,6 +59,7 @@ const props = {
 
 export default () => <>
   <ToolBar {...props} rowStyle={{ padding: '13px 6px' }} leftStyle={{ background: '#c3c' }} />
+  
   <ToolBar
     left={
       <>

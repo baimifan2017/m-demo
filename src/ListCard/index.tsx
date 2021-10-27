@@ -20,6 +20,7 @@ import { objectAssignAppend, request, formatMsg } from '../utils';
 import SeidLocaleReceiver from '../seid-locale-provider/SeidLocaleReceiver';
 import defaultLocale from './locale';
 import { LocaleItem } from '../locale';
+import './style/index.less'
 
 const Search = Input.Search;
 

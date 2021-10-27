@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import cssAnimate, { isCssAnimationSupported } from 'css-animation';
 import cx from 'classnames';
-import omit from 'omit.js';
+import { omit } from 'lodash';
+import './style/animate.less'
 import './style/index.less'
 
 export interface IAnimateProps {
@@ -56,6 +57,7 @@ class Animate extends PureComponent<IAnimateProps, any> {
       _style.animationDelay = `${delay}ms`;
       _style.WebkitAnimationDelay = `${delay}ms`;
     }
+    // @ts-ignore
     const divProps = omit(otherProps, ['type', 'callback', 'delay', 'duration']);
     return (
       <div className={cn} {...divProps} style={_style}>

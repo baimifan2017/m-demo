@@ -173,7 +173,7 @@ class ToolBar extends Component<IToolBarProps, IToolBarState> {
       <Row
         style={style}
         className={cls(className, 'seid-tool-bar')}
-        type="flex"
+        // type="flex"
         justify="space-between"
         align="middle"
       >

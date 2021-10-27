@@ -1,7 +1,8 @@
 import '../site/theme/static/index.less'
-import '../site/theme/static/animate.less'
-import ToolBar from '@/ToolBar';
-// import '../site/theme/static/style'
+// import '../site/theme/static/animate.less'
+import './style/index.less'
+import { default as ProTable } from '@ant-design/pro-table';
+import { default as AntdIcon } from '@ant-design/icons';
 
 export { default as Action } from './Action';
 export { default as ITree } from './ITree';

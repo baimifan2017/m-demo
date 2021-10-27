@@ -4,7 +4,7 @@ group:
   title: 展示组件
   path: /display
 nav:
-  title: components
+  title: components 
   path: /components
 ---
 
