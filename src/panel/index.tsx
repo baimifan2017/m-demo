@@ -12,6 +12,7 @@ import { getUUID } from '../utils';
 import LocaleReceiver from '../seid-locale-provider/SeidLocaleReceiver';
 import { LocaleItem } from '../locale';
 import defaultLocale from './locale';
+import './style/index.less'
 
 export interface Size extends ISize {
   bodyWidth: number;
@@ -408,6 +409,7 @@ class Panel extends Component<IPanelProps, any> {
   render(): ReactNode {
     return (
       <LocaleReceiver defaultLocale={defaultLocale} componentName="Panel">
+        {/* @ts-ignore*/}
         {this.renderPanel}
       </LocaleReceiver>
     );

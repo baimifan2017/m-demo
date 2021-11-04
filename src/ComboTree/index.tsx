@@ -664,7 +664,7 @@ class ComboTree<T> extends React.Component<ComboProps<T>, any> {
             ) : null}
             <div className="list-body">
               <Skeleton loading={loading} active>
-                <ScrollBar>
+                <ScrollBar style={{height: 220}}>
                   {treeData && treeData.length === 0 ? (
                     <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
                   ) : (

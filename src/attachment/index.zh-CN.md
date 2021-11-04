@@ -19,7 +19,7 @@ nav:
 ```jsx
 import React from 'react';
 import { Attachment } from 'm-demo';
-import get from 'lodash/get';
+import { get } from 'lodash';
 
 const attachmentProps = {
   serviceHost: 'http://10.4.208.87',

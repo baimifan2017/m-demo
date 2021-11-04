@@ -1,9 +1,11 @@
 ---
-category: Components
-subtitle: 工作流
-type: 工作流
 title: WorkFlow
-cols: 1
+group:
+  title: 展示组件
+  path: /display
+nav:
+  title: components
+  path: /components
 ---
 
 1.1.50+新增组件

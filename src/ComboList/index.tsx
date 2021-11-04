@@ -380,6 +380,7 @@ class ComboList<T> extends React.Component<ComboProps<T>, any> {
         data = d;
       }
     }
+    console.log(data,'this is data')
     return data;
   };
 
@@ -684,6 +685,8 @@ class ComboList<T> extends React.Component<ComboProps<T>, any> {
     } = this.props;
     const selectRestProps = { style, className };
     Object.assign(selectRestProps, { value });
+
+    console.log(listData,'listData')
     return (
       <Select
         ref={ele => (this.select = ele)}
@@ -711,7 +714,7 @@ class ComboList<T> extends React.Component<ComboProps<T>, any> {
               </div>
             ) : null}
             <div className="list-body">
-              <ScrollBar>
+              <ScrollBar style={{height:'220px'}}>
                 <List
                   itemLayout={
                     listProps && listProps.itemLayout

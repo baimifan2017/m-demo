@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cls from 'classnames';
 import omit from 'omit.js';
-import AntdIcon, { IconProps } from 'antd/es/icon';
+import AntdIcon  from 'antd/es/icon';
 import ToolTip, { TooltipProps } from 'antd/es/tooltip';
 import icons from './iconfont';
-import style from './style/index'
+import  './style/index.less';
+import  './style/animate.less';
 
-export interface IExtIconProps extends IconProps {
+export interface IExtIconProps {
   antd: boolean;
   font: string;
   type: string;
   tooltip?: TooltipProps;
   disabled: boolean;
+  onClick?: () => any;
+  spin?: boolean;
+  prefixCls?: string
+  className?:string
 }
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -48,15 +53,16 @@ class ExtIcon extends Component<IExtIconProps, any> {
       disabled,
     };
     if (disabled) {
-      restProps.onClick = () => {};
+      restProps.onClick = () => {
+      };
     }
     const iconType = type && `${type.startsWith('#') ? type.replace(/#/, '') : type}`;
     const iconProps = omit(restProps, ['tooltip']);
     return antd ? (
       <AntdIcon type={type} className={cls(className, cn)} spin={spin} {...iconProps} />
     ) : (
-      <i className={cls(style[prefixCls], { spin }, cn, className)} {...iconProps}>
-        <svg className="svg-icon" aria-hidden="true">
+      <i className={cls(prefixCls, { spin }, cn, className)} {...iconProps}>
+        <svg className='svg-icon' aria-hidden='true' style={{display:'block',height:'1em',width:'1em'}}>
           <use xlinkHref={`#${font}-${iconType}`} />
         </svg>
       </i>

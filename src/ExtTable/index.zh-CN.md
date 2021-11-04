@@ -25,7 +25,7 @@ A New Component
 ## 带复选框的表格
 <code src='./demo/checkbox.tsx'></code>
 
-## 远程获取数据
+## 远程获取数据    
 <code src='./demo/remote.tsx'></code>
   
 ## API

@@ -11,7 +11,7 @@ import cls from 'classnames';
 import PerfectScrollbar from 'perfect-scrollbar';
 import isEqual from 'react-fast-compare';
 import SeidLocaleReceiver from '../seid-locale-provider/SeidLocaleReceiver';
-import Panel, { Size } from '../panel';
+import Panel, { Size } from '../Panel';
 import ToolBar, { IToolBarProps } from '../ToolBar';
 import defaultLocale from './locale';
 import { LocaleItem } from '../locale';
@@ -20,7 +20,8 @@ import StoreProps from './storeProps';
 import ExtTool from './ExtTool';
 import GUID from './guid';
 import { formatMsg, objectAssignAppend, request, storage } from '../utils';
-import './style/index.less'
+
+
 const { Search } = Input;
 
 const blankColumn = {
@@ -120,7 +121,7 @@ class ExtTable<T> extends Component<IExtTableProps<T>, IExtTableState<T>> {
 
   protected toolBar: any;
 
-  protected locale: LocaleItem | undefined;
+  protected locale: LocaleItem;
 
   protected data: T[];
 
@@ -156,13 +157,13 @@ class ExtTable<T> extends Component<IExtTableProps<T>, IExtTableState<T>> {
       pagination === false
         ? false
         : ({
-            current: 1,
-            pageSize: defaultPageSize,
-            total: gridData.length,
-            showSizeChanger: true,
-            pageSizeOptions: defaultPageSizeOptions,
-            ...(isBoolean(pagination) ? {} : pagination),
-          } as PaginationProps);
+          current: 1,
+          pageSize: defaultPageSize,
+          total: gridData.length,
+          showSizeChanger: true,
+          pageSizeOptions: defaultPageSizeOptions,
+          ...(isBoolean(pagination) ? {} : pagination),
+        } as PaginationProps);
     const checkboxConfig = this.getCheckboxConfig();
     let checkType: RowSelectionType = 'radio';
     if (checkboxConfig && checkboxConfig.multiSelect) {
@@ -457,9 +458,9 @@ class ExtTable<T> extends Component<IExtTableProps<T>, IExtTableState<T>> {
         pageInfo: isBoolean(pagination)
           ? {}
           : {
-              page: pagination.current,
-              rows: pagination.pageSize,
-            },
+            page: pagination.current,
+            rows: pagination.pageSize,
+          },
       });
     }
     if (cascadeParams) {
@@ -875,10 +876,12 @@ class ExtTable<T> extends Component<IExtTableProps<T>, IExtTableState<T>> {
     }));
     const panelProps = {
       title,
-      showHeader: !!title,
+      // showHeader: !!title,
+      showHeader: false,
       height: wrappedHeight,
       width,
-      bordered,
+      // bordered,
+      bordered:false,
       className: cls('seid-ext-table', { 'no-title': !title }),
       cover: true,
       showRefresh: false,
@@ -887,11 +890,11 @@ class ExtTable<T> extends Component<IExtTableProps<T>, IExtTableState<T>> {
     };
     const rowSelection = checkbox
       ? ({
-          selectedRowKeys,
-          onChange: this.handlerRowSelectChange,
-          getCheckboxProps: this.checkboxProps,
-          type: checkType,
-        } as TableRowSelection<T>)
+        selectedRowKeys,
+        onChange: this.handlerRowSelectChange,
+        getCheckboxProps: this.checkboxProps,
+        type: checkType,
+      } as TableRowSelection<T>)
       : undefined;
     const antdTableProps = omit(rest || {}, [
       'columns',

@@ -416,10 +416,10 @@ export const setCursorPosition = (
   ctrl: HTMLInputElement | any,
   pos: number,
 ) => {
-  if (ctrl.setSelectionRange) {
+  if (ctrl?.setSelectionRange) {
     ctrl.focus();
     ctrl.setSelectionRange(pos, pos);
-  } else if (ctrl.createTextRange) {
+  } else if (ctrl?.createTextRange) {
     const range = ctrl.createTextRange();
     range.collapse(true);
     range.moveEnd('character', pos);

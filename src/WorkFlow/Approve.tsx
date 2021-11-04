@@ -20,6 +20,7 @@ import {
 } from './service';
 import StoreProps from './storeProps';
 import ApprovePanel from './ApprovePanel';
+import './style/index.less'
 
 const { Content, Footer, Sider } = Layout;
 const { TabPane } = Tabs;
