@@ -1,4 +1,4 @@
-# dumi app
+# introduce
 
 ## Getting Started
 
