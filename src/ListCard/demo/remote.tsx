@@ -7,7 +7,7 @@ const listCardProps = {
     console.log(keys, items);
   },
   store: {
-    url: `http://10.4.32.53:7300/mock/5e0c81854987bb28481c8f55/mocker/service/user/findAll`,
+    url: `http://10.4.32.xx:7300/mock/5e0c81854987bb28481c8f55/mocker/service/user/findAll`,
   },
   searchProperties: ['name', 'address'],
   itemField: {
