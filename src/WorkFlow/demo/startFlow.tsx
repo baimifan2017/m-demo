@@ -4,8 +4,8 @@ import { WorkFlow, ExtIcon } from 'm-demo';
 const { StartFlow } = WorkFlow;
 
 const props = {
-  businessKey: '489DCAA6-13F0-11E9-9AE6-0242C0A8440B',
-  businessModelCode: 'com.ecmp.flow.entity.DefaultBusinessModel',
+  businessKey: '489DCAA6-13F0-11E9-9AE6-xxxxxxx',
+  businessModelCode: 'xxxxxx.entity.DefaultBusinessModel',
   store: {
     gateway: 'api-gateway',
     serviceHost: 'http://xxxxx',
