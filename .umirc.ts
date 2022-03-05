@@ -42,9 +42,9 @@ export default defineConfig({
       },
     ],
   ],
-  styles: [ `body { color: red; }`,`https://./site/static/theme.less`,`./site/static/animate.less`,`./site/static/index.less`],
-  base: '/m-demo',
-  publicPath: '/m-demo/',
+  // styles: [ `body { color: red; }`,`https://./site/static/theme.less`,`./site/static/animate.less`,`./site/static/index.less`],
+  // base: '/m-demo',
+  // publicPath: '/m-demo/',
   alias: {
     '@': resolve(__dirname, './src'),
     'm-demo': resolve(__dirname, './src'),
