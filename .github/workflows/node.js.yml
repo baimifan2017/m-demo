@@ -10,6 +10,8 @@ on:
     - '.github/workflows/**'
     - '__test__/**'
     - 'src/**'
+    - 'package.json'
+    - '.umirc.ts'
       
   pull_request:
     branches: [ main ]

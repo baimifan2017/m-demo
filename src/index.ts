@@ -1,6 +1,6 @@
-import '../site/theme/static/index.less'
+import '../site/theme/static/index.less';
 // import '../site/theme/static/animate.less'
-import './style/index.less'
+import './style/index.less';
 import { default as ProTable } from '@ant-design/pro-table';
 import { default as AntdIcon } from '@ant-design/icons';
 
